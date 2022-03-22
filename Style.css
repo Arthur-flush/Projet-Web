@@ -7,6 +7,11 @@ body {
     color: #eee;
     height: 100%;
     min-height: 100%;
+    border: 0px; 
+    margin: 0px; 
+    padding: 0px; 
+    position:relative; 
+    width:100%;
 }
 
 header {
@@ -22,29 +27,30 @@ header {
 /* source: w3school*/
 .sidebar {
     height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0;
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-  border: 1px solid #aaa;
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+    border: 1px solid #aaa;
 }
 
-
 .openbtn {
-    font-size: 15px;
+    font-size: 20px;
     cursor: pointer;
     background-color: #111;
     color: white;
     border: none;
-    top: 0;
-    left: 0;
+    height: 100%;
+    position: relative;
+    top: 0px;
 
 }
+
 
 .sidebar div {
     padding: 8px 8px 8px 32px;
@@ -58,5 +64,4 @@ header {
 #main {
     transition: margin-left .5s; /* If you want a transition effect */
     
-
 }

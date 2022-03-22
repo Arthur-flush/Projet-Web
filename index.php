@@ -1,12 +1,11 @@
 <?php
-    
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>SHOP</title>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="./Style.css">
 </head>
 <body>
 
@@ -19,8 +18,11 @@
         </div>
     </div>
 
-    <div id="main"> 
-        <button id="navbutton" class="openbtn" onclick="openNav()">&#9776;</button> 
+    <div id="main" class="main"> 
+        <button id="navbutton" class="openbtn" onclick="openNav()">&#9776;</button>
+        <div >
+
+        </div>
     </div>
 
     <script src="index.js" > </script>
