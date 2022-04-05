@@ -6,7 +6,7 @@
 <html>
 <head>
     <title>SHOP</title>
-    <link rel="stylesheet" href="./Style.css">
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
 
