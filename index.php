@@ -1,5 +1,12 @@
 <?php
+ini_set("display_errors", "on");
+$conn = new mysqli("127.0.0.1", "ProjetWeb", "scam.com", "ProjetWeb");
+if(! $conn ) {
+    die('Could not connect to db');
+}
 
+//echo 'Connected successfully';
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +18,15 @@
 <body>
 
     <header>
-        What
+        <div class="logo">
+            ARTCHAD NFT
+        </div>
+        <form class="searchdiv">
+            <input class="searchbar" type="text" name="search" placeholder="Search">
+            <button class="searchbutton" type="submit" onclick="">Search</button>
+        </form>
+
+        <button class="loginbutton" type="submit">Connect</button>
     </header>
     <div id="sidebar" class="sidebar">
         <div>
