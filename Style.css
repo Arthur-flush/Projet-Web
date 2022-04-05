@@ -14,6 +14,11 @@ body {
     width:100%;
 }
 
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
 header {
     display: flex;
     background-color: #000;
@@ -63,5 +68,12 @@ header {
 
 #main {
     transition: margin-left .5s; /* If you want a transition effect */
-    
+    height: 100%;
+}
+
+.item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
 }
