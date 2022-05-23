@@ -12,6 +12,9 @@
 
         $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
         $result = $conn->query($sql);
+        if (!$result) {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $_SESSION['user'] = $row['id'];
@@ -29,7 +32,7 @@
 <html>
 <head>
     <title>SHOP</title>
-    <link rel="stylesheet" href="./Style.css?random=@Environment.TickCount">
+    <link rel="stylesheet" href="./Style.css">
 </head>
 <body>
     <form action="login.php" method="post">
