@@ -1,4 +1,5 @@
 <?php
+    session_start();
     ini_set("display_errors", "on");
     if (isset($_POST['login'])) {
         $conn = new mysqli("127.0.0.1", "ProjetWeb", "scam.com", "ProjetWeb");
@@ -40,4 +41,5 @@
         <input type="password" id="password" name="password" placeholder="password">
         <button type="submit" name="login">Login</button>
     </form>
+    Dont have an account ?? <a href="register.php">Register</a>
 </body>

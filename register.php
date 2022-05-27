@@ -1,4 +1,5 @@
 <?php
+session_start();
 ini_set("display_errors", "on");
 
 if (isset($_POST['login'])) {
@@ -12,6 +13,15 @@ if (isset($_POST['login'])) {
         echo "Wrong email";
     }
     $password = $_POST['password'];
+
+    /*
+    // check if password at least 8 characters long
+    if (strlen($password) < 8) {
+        echo "Password must be at least 8 characters long";
+        die();
+    }
+    */
+
     $password = hash('sha256', $password);
     $handle = $_POST['handle'];
     $handle = strtolower($handle);
@@ -19,6 +29,27 @@ if (isset($_POST['login'])) {
         echo "handle must be alphanumeric";
         die();
     }
+    // check if handle in db
+    $sql = "SELECT * FROM users WHERE handle = '$handle'";
+    $result = $conn->query($sql);
+    if (!$result) {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    if ($result->num_rows > 0) {
+        echo "handle already taken";
+        die();
+    }
+    // check if email in db
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $result = $conn->query($sql);
+    if (!$result) {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    if ($result->num_rows > 0) {
+        echo "email already taken";
+        die();
+    }
+    // insert into db
     $sql = "INSERT INTO users (email, password, handle) VALUES ('$email', '$password', '$handle')";
 
     if ($conn->query($sql) === TRUE) {

@@ -27,103 +27,355 @@ header {
     margin-left: auto;
     margin-right: auto;
     z-index: 1000;
-    height: 30px;
-}
-/* source: w3school*/
-.sidebar {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 32px;
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-    /*border: 1px solid #aaa;*/
+    height: 50px;
 }
 
-.openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #000;
-    color: white;
-    border: none;
-    height: 100%;
-    position: relative;
-    top: 0px;
-
-}
-
-
-.sidebar div {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-
-#main {
-    transition: margin-left .5s; /* If you want a transition effect */
-    height: 100%;
-}
-
-.item {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-}
 
 .searchdiv {
-    width: 70%;
+    width: 50%;
     flex-grow: 3;
     flex-shrink: 1;
-    
+    flex-wrap: nowrap;
 }
 
 .searchbar {
-    width: 80%;
-    height: 25px;
+    width: 65%;
+    height: 35px;
     border: 1px solid #aaa;
-    border-radius: 5px;
+    border-radius: 15px;
     padding-left: 10px;
     font-size: 15px;
     color: #aaa;
-    margin-left: 5%;
+    margin-left: 3%;
+    background-color: #333;
 }
 
 .searchbutton {
     width: 10%;
-    height: 30px;
+    height: 50px;
     border: 1px solid #aaa;
     border-radius: 5px;
     font-size: 15px;
     color: #fff;
+    min-width: 60px;
+    cursor: pointer;
+    margin-right: 2%;
+    background-color: #111;
 }
 
-.loginbutton {
-    width: 10%;
-    height: 30px;
+.searchbutton:hover {
+    background-color: #aaa;
+}
+
+.headerbutton {
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #111;
+}
+
+.headera {
+    width: 8%;
+    height: 50px;
+    border: 1px solid #aaa;
+    font-size: 15px;
+    color: #fff;
+    background-color: #111;
+}
+
+.headerbutton:hover {
+    background-color: #aaa;
+}
+
+
+
+.logo {
+    width: auto;
+    height: auto;
+    min-width: 100px;
+    
+    font-size: 20px;
+    color: #aaa;
+    display: flex;
+    justify-content: flex-start;
+    max-width: 379px;
+    max-height: 88px;
+}
+
+.profilepic {
+    border-radius: 50%;
+    margin-left: 2%;
+}
+
+.latest {
+    width: 100%;
+    height: 200px;
+    background-color: #111;
+    display: flex;
+    justify-content: left;    
+    align-items: flex-start;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.divider {
+    width: 100%;
+    height: auto;
+    font-size: 50px;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: #222;
+}
+
+.latest::after {
+    white-space: pre;
+    content: "\a";
+}
+
+.stock {
+    width: 300px;
+    height: 200px;
+    background-color: #333;
+    
+    display: flex;
+    justify-content: space-around;
+    margin-right: 5%;
+}
+
+.stockimage {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
+.stockinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    margin-right: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.stockname {
+    font-size: 20px;
+    color: #aaa;
+}
+
+.stockprice {
+    font-size: 20px;
+    color: #aaa;
+}
+
+.stockowner {
+    font-size: 15px;
+    color: #aaa;
+}
+
+.browse {
+    width: 100%;
+    height: auto;
+    background-color: #111;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.handlelink {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.creationform {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 3%;
+    width: 90%;
+    height: auto;
+    background-color: #111;
+    padding: 2%;
+    border-radius: 5px;
+}
+
+.creationinput {
+    width: 150px;
+    height: 20px;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    font-size: 15px;
+    color: #aaa;
+    margin: 2%;
+    background-color: #111;
+}
+
+.creationbutton {
+    width: 20%;
+    height: 50px;
     border: 1px solid #aaa;
     border-radius: 5px;
     font-size: 15px;
-    color: #222;
+    color: #fff;
+    min-width: 60px;
+    cursor: pointer;
+    margin: 2%;
+    background-color: #111;
+    align-self: center;
 }
 
-.logo {
-    width: 10%;
-    height: 30px;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    font-size: 20px;
-    color: #aaa;
+.creationimage {
+    align-self: center;
+}
+
+.creationtext {
+    margin: 1%;
+}
+
+.creationimagebutton {
+    background-color: #111;
+    align-self: center;
+    color: #fff;
+    margin: 2%;
+}
+.creationdescription {
+    width: 95%;
+    height: auto;
+    background-color: #111;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    color: #fff;
+    margin: 2%;
+}
+
+
+.tags {
+    width: 97%;
+    height: auto;
+    background-color: #222;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    color: #fff;
+    flex-wrap: wrap;
+    margin: 2%;
+}
+
+.tag {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 50px;
+    height: 24px;
+    flex: 1 0 30%;
+}
+
+.tag input[type="checkbox"] {
+	display:none;
+}
+
+.tag input + label {
+	display: inline-block;	
+	width: 120px;
+	height: 24px;
+	cursor: pointer;	
+    background-repeat: no-repeat;
+	background-image: url("./images/tag\ unchecked.png");
+    padding-left: 26px;
+    padding-top: 1px;
+}
+
+.tag input[type="checkbox"]:checked + label {
+	background-image: url("./images/tag\ checked.png")
+}
+
+.stockpage {
+    width: 90%;
+    height: 80%;
+    background-color: #111;
+    margin: 5%;
+    display: flex;
+    padding: 2%;
+    flex-direction: column;
+}
+
+.stockpageinfo {
+    padding: 3%;
+    width: 100%;
+    height: 470px;
+    background-color: #000;
     margin-left: 2%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    flex-direction: column;
+}
 
+.stockpage img {
+    background-color: #000;
+}
+
+.stockname {
+    font-size: 22px;
+    color: #aaa;
+}
+
+.stockprice {
+    font-size: 18px;
+    color: #aaa;
+}
+
+.stockpageowner {
+    font-size: 15px;
+    color: #aaa;
+}
+
+.stockpageimginfo {
+    width: 100%;
+    height: auto;
+    background-color: #111;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.stockpagedescription {
+    background-color: #000;
+    width: 98%;
+    height: 180px;
+    margin-top: 2%;
+    padding: 1%;
+}
+
+.addtocart {
+    
+}
+
+.addtocartbutton {
+    background: url(./images/cart-add-regular-24.png) no-repeat;
+    cursor: pointer;
+    border: none;
+    width: 150px;
+    height: 24px;
+    color: #fff;
+    font-size: 20px;
 }
