@@ -1,7 +1,7 @@
 #!/bin/sh
 #move every image from tmp_images to NFTs
 
-cp tmp_images/* NFTs/
+cp tmp_images/* stocks/
 
 echo "reseting db"
 sudo mysql ProjetWeb < base.sql

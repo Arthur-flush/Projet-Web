@@ -73,6 +73,7 @@ header {
     font-size: 15px;
     color: #fff;
     background-color: #111;
+    cursor: pointer;
 }
 
 .headera {
@@ -82,6 +83,7 @@ header {
     font-size: 15px;
     color: #fff;
     background-color: #111;
+    cursor: pointer;
 }
 
 .headerbutton:hover {
@@ -284,6 +286,7 @@ header {
     width: 50px;
     height: 24px;
     flex: 1 0 30%;
+    background-color: #222;
 }
 
 .tag input[type="checkbox"] {
@@ -313,6 +316,7 @@ header {
     display: flex;
     padding: 2%;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .stockpageinfo {
@@ -325,6 +329,7 @@ header {
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .stockpage img {
@@ -366,10 +371,6 @@ header {
     padding: 1%;
 }
 
-.addtocart {
-    
-}
-
 .addtocartbutton {
     background: url(./images/cart-add-regular-24.png) no-repeat;
     cursor: pointer;
@@ -379,3 +380,131 @@ header {
     color: #fff;
     font-size: 20px;
 }
+
+.deletestockbutton {
+    background: url(./images/trash-regular-24.png) no-repeat;
+    cursor: pointer;
+    border: none;
+    width: 150px;
+    height: 24px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.stars {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    width: 70%;
+    margin-left: 10%;
+    margin: auto;
+}
+
+.stars input[type="radio"] {
+	display:none;
+}
+
+.stars input + label {
+	display: inline-block;	
+	width: 24px;
+	height: 24px;
+	cursor: pointer;	
+    background-repeat: no-repeat;
+	background-image: url("./images/star-solid-24-unchecked.png");
+    padding-left: 26px;
+    padding-top: 1px;
+}
+
+.stars input[type="radio"]:checked + label {
+	background-image: url("./images/star-solid-24-checked.png")
+}
+
+.ratingbutton input[type="submit"] {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 2%;
+    margin-left: 30%;
+}
+
+
+.displaytags {
+    width: 97%;
+    height: auto;
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    color: #fff;
+    flex-wrap: wrap;
+    margin: 2%;
+}
+
+.displaytag {
+    display: flex;
+    justify-content: baseline;
+    align-items: flex-start;
+    flex-direction: row;
+    flex: 1 0 30%;
+    margin: 2%;
+}
+
+.displaytag img {
+    background-color: transparent;
+}
+
+.displaytaglabel {
+    font-size: 15px;
+    color: #aaa;
+    margin-left: 2%;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 1%;
+}
+
+.pdfbutton {
+    background: url(./images/file-pdf-solid-24.png) no-repeat;
+    cursor: pointer;
+    border: none;
+    width: 150px;
+    height: 24px;
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    left: 7%;
+    top: 13%;
+}
+
+.downloadpdf {
+    position: absolute;
+    left: 7%;
+    top: 13%;
+}
+
+.pdfbutton label {
+    margin-left: 5%;
+    visibility: hidden;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 1%;
+    font-style: normal;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    cursor: pointer;
+}
+
+
+
+.pdfbutton:hover label {
+    visibility: visible;
+}
+

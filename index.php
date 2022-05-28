@@ -65,7 +65,10 @@ for ($i = 0; $i < count($stocks); $i++) {
 
 }
 
-
+$isloggedin = false;
+if (isset($_SESSION['user'])) {
+    $isloggedin = true;
+}
 
 //echo 'Connected successfully';
 $conn->close();
@@ -91,8 +94,18 @@ $conn->close();
             </form>
         </div>
         <a href="create_stock.php" class="headera"><button class="headerbutton" >Create</button></a>
-        <a href="login.php" class="headera"><button class="headerbutton" >Login</button></a>
-        <a href="register.php" class="headera"><button class="headerbutton" >Register</button></a>
+        <?php 
+            $div = '
+            <a href="login.php" class="headera"><button class="headerbutton" >Login</button></a>
+            <a href="register.php" class="headera"><button class="headerbutton" >Register</button></a>
+            ';
+            if ($isloggedin) {
+                $div = '
+                <a href="logout.php" class="headera"><button class="headerbutton" >Logout</button></a>
+                ';
+            }
+            echo $div;
+        ?>
         <img src="Profile_Pics/default64.png" class="profilepic">
     </header>
     <body>
