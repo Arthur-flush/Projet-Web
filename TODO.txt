@@ -1,0 +1,47 @@
+Page d'accueil
+    [x] style
+    [x] code
+
+Login / register 
+    [x] style
+    [x] code
+    
+Ajouter Stock image
+    [x] style
+    [x] code
+
+Basket page / checkout
+    [x] style
+    [x] code
+
+Search bar / search page
+    [ ] style
+    [ ] code
+
+"Newest items"
+    [x] style
+    [x] code
+
+Stock image
+    [x] style
+    [x] code
+ 
+Admin Options (delete items)
+    [x] style
+    [x] code
+
+Ratings
+    [x] style
+    [x] code
+
+Generate pdf
+    [x] style
+    [x] code
+
+User Page
+    [ ] style
+    [ ] code
+
+User Page admin options
+    [ ] style
+    [ ] code

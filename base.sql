@@ -1,4 +1,5 @@
 drop table if exists rating;
+drop table if exists cart_element;
 drop table if exists stock;
 drop table if exists users;
 
@@ -35,7 +36,15 @@ CREATE TABLE `rating` (
     foreign key (user_id) references users(id) on delete cascade
 );
 
+CREATE TABLE `cart_element` (
+    `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `user_id` int(11) NOT NULL,
+    `stock_id` int(11) NOT NULL,
+    `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    foreign key (user_id) references users(id) on delete cascade,
+    foreign key (stock_id) references stock(id) on delete cascade
+);
+
 
 DELETE FROM `users`;
 Insert into users (handle, password, email, admin) values ('admin', "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918", 'admin@admin.com', TRUE);
-

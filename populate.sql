@@ -1,7 +1,6 @@
-INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('stock 1', 'Description 1', 'bleuchat.png',     5,   1, "person,bleu,cosplay,neutral expression");
-INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('stock 2', 'Description 2', 'chienluca.png',    2,   1, "dog");
-INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('stock 3', 'Description 3', 'kil.png',          5,   1, "person,killian");
-INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('stock 4', 'Description 4', 'laclasse.png',     10,  1, "group,bleu,arthur,chad,luca,classe,nature");
-INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('stock 5', 'Description 5', 'samymusl.png',     5,   1, "person,samy,flex");
-INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('stock 6', 'Description 6', 'shawnarchi.png',   5,   1, "person,shawn,selfie");
-INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('stock 7', 'Description 7', 'shawncostume.png', 7,   1, "person,shawn,selfie,suit,serious");
+INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('Catsle-Nine', 'On peut appercevoir sur cette image un rare portrait d''Arthur Chateauneuf avec des oreilles de chat d''ou le titre de cette oeuvre "Catsle-Nine"', 'bleuchat.png',     5,   1, "person,bleu,cosplay,neutral expression,selfie");
+INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('WOAF WOAF', 'Je vous presente mon animal de compagnie dans toute sa splandeur  ', 'chienluca.png',    2,   1, "dog");
+INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('Kill comme Killian', 'Pour les fan de Jeu video je met en vente mon Killian, La photo a été prise par lui meme ce qui lui rajoute de la valeur. ', 'kil.png',    5,   1, "person,killian,selfie");
+INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('50% DE LA L2 info', 'Cette image vaut son prix, c''est une moitié de photo de classe de la L2 info. On y retrouve touts les non habitués de la camera ', 'laclasse.png',     10,  1, "group,bleu,arthur,chad,luca,classe,nature");
+INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('La montagne devant les pyrenne', 'On dit souvent que les montagnes ne se croisent jamais, voici la  preuve du contraire Avec Samy qui va a l''assaut des collines ', 'samymusl.png',     5,   1, "person,samy,flex,nature");
+INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('2 sigma qui se fixent', 'La photo parle d''elle meme+Nocaption needed', 'shawncostume.png', 7,   1, "person,shawn,selfie,suit,serious");

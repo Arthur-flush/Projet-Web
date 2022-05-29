@@ -95,7 +95,22 @@ foreach ($tags as $tag) {
     $pdf->Cell(20, 7, "# " . $tag, 0, 1);
 }
 $pdf->SetFont('Arial', '', 16);
-$pdf->Cell(20, 10, "Rating: " . $ratings, 0, 1);
+
+if ($ratings > 0) {
+    $pdf->Cell(150, 20, "", 0, 0);
+    $pdf->Cell(20, 10, "Rating: ", 0, 1);
+    $pdf->SetFont('Arial', '', 14);
+    $pdf->Cell(150, 10, "", 0, 0);
+    $pdf->Cell(20, 10, number_format(round($ratings, 2), 2), 0, 1);
+}
+else {
+    $pdf->Cell(150, 20, "", 0, 0);
+    $pdf->Cell(20, 10, "Rating: ", 0, 1);
+    $pdf->SetFont('Arial', '', 14);
+    $pdf->Cell(150, 10, "", 0, 0);
+    $pdf->Cell(20, 10, "No ratings yet", 0, 1);
+}
+
 // description
 $pdf->SetFont('Arial', '', 16);
 $pdf->Cell(20, 30, "", 0, 0);

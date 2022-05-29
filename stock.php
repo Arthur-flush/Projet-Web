@@ -18,17 +18,23 @@ $result = $conn->query($sql);
 $div = '
 <div class="stockpage">
         <div class="stockpageimginfo">
+            <div class="downloadpdf">
+                <button class="pdfbutton" id="pdfbutton" onclick="location.href = \'generate_pdf.php?id=placeholderstockid\'">
+                    <label for="pdfbutton" class="downloadpdflabel">Download PDF</label>
+                </button>
+            </div>
+            
             <img src="stocks/placeholder.png" alt="stock image" class="stockpageimage" width="512" height="512">
             <div class="stockpageinfo">
-                <h1 class="stockname">stock name</h1>
-                <h2 class="stockprice">$ stock price</h2>
+                <h1 class="stockpagestockname">stock name</h1>
+                <h2 class="stockpagestockprice">$stock price.00</h2>
                 <!-- add picture to cart -->
                 <div class="addtocart">
                 
                     <form action="cart.php" method="post">
-                        <input type="hidden" name="stockid" value="placeholderid">
+                        <input type="hidden" name="stockid" value="placeholderstockid">
                         <input type="hidden" name="stockname" value="placeholdername">
-                        <input type="hidden" name="stockprice" value="placeholdername">
+                        <input type="hidden" name="stockprice" value="stock price">
                         <input type="submit" name="addtocart" value="add to cart" class="addtocartbutton"> 
                     </form>
                 </div>
@@ -85,13 +91,7 @@ $div = '
                 <div class="stockpageinfotags">
                     <h3 class="stocktags">#tags</h3>
                 </div>
-                <div class="downloadpdf">
-                    <button class="pdfbutton" id="pdfbutton" onclick="location.href = \'generate_pdf.php?id=placeholderstockid\'">
-                        <label for="pdfbutton" class="downloadpdflabel">Download PDF</label>
-                    </button>
-                    
-
-                </div>
+                
             </div>
         </div>
         <div class="stockpagedescription">
@@ -220,29 +220,11 @@ else {
     <link rel="stylesheet" href="./Style.css">
 </head>
 <body>
-    <header>
-        <a href="index.php" class="logo"><image src="images/logo.png" alt="logo" class="logo" /></a>
-        <div class="searchdiv">
-            <form>
-                <input class="searchbar" type="text" id="search" name="search" placeholder="Search">
-                <button class="searchbutton" type="submit" name="search_button">Search</button>
-            </form>
-        </div>
-        <a href="create_stock.php" class="headera"><button class="headerbutton" >Create</button></a>
-        <?php 
-            $logindiv = '
-            <a href="login.php" class="headera"><button class="headerbutton" >Login</button></a>
-            <a href="register.php" class="headera"><button class="headerbutton" >Register</button></a>
-            ';
-            if ($isloggedin) {
-                $logindiv = '
-                <a href="logout.php" class="headera"><button class="headerbutton" >Logout</button></a>
-                ';
-            }
-            echo $logindiv;
-        ?>
-        <img src="Profile_Pics/default64.png" class="profilepic">
-    </header>
-    <?php echo $div; ?>
+    <?php include_once("header.php"); ?>
+    <div class="content">
+        <?php echo $div; ?>
+    </div>
+    <?php include_once("footer.php"); ?>
+    
 </body>
 </html>

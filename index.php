@@ -32,7 +32,7 @@ $stockdiv = '
             stock name
         </div>
         <div class="stockprice">
-            $ stock price 
+            $stock price.00
         </div>
         <div class="stockowner">
             <a href="profile.php?ownerid" class="handlelink">
@@ -65,13 +65,68 @@ for ($i = 0; $i < count($stocks); $i++) {
 
 }
 
-$isloggedin = false;
-if (isset($_SESSION['user'])) {
-    $isloggedin = true;
+// get 50 stocks from db
+$sql = "SELECT * FROM stock ORDER BY created_at DESC, id DESC LIMIT 50";
+$result = $conn->query($sql);
+if (!$result) {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$stocks = array();
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $stocks[] = $row;
+    }
+}
+
+$browsediv = '
+<div class="stock stockbrowse">
+    <div class="stockimage">
+        <a href="stock.php?id=placeholderid">
+            <image src="stocks/placeholder.png" width="200" height="200">
+        </a>
+    </div>
+    <div class="stockinfo">
+        <div class="stockname">
+            stock name
+        </div>
+        <div class="stockprice">
+            $stock price.00
+        </div>
+        <div class="stockowner">
+            <a href="profile.php?ownerid" class="handlelink">
+                @stock owner
+            </a>
+        </div>
+    </div>
+</div>
+';
+
+$browsedivs = array();
+for ($i = 0; $i < count($stocks); $i++) {
+    $browsedivs[$i] = str_replace("placeholder.png", $stocks[$i]['image'], $browsediv);
+    $browsedivs[$i] = str_replace("placeholderid", $stocks[$i]['id'], $browsedivs[$i]);
+    $browsedivs[$i] = str_replace("stock name", $stocks[$i]['name'], $browsedivs[$i]);
+    $browsedivs[$i] = str_replace("stock price", $stocks[$i]['price'], $browsedivs[$i]);
+    $ownerid = $stocks[$i]['owner'];
+    $browsedivs[$i] = str_replace("ownerid", $ownerid, $browsedivs[$i]);
+    $sql = "SELECT * FROM users WHERE id = '$ownerid'";
+    $result = $conn->query($sql);
+    if (!$result) {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $browsedivs[$i] = str_replace("stock owner", $row['handle'], $browsedivs[$i]);
+        }
+    }
+
 }
 
 //echo 'Connected successfully';
 $conn->close();
+
+
 
 ?>
 
@@ -85,51 +140,32 @@ $conn->close();
     <link rel="stylesheet" href="./Style.css">
 </head>
 <body>
-    <header>
-        <a href="index.php" class="logo"><image src="images/logo.png" alt="logo" class="logo" /></a>
-        <div class="searchdiv">
-            <form>
-                <input class="searchbar" type="text" id="search" name="search" placeholder="Search">
-                <button class="searchbutton" type="submit" name="search_button">Search</button>
-            </form>
-        </div>
-        <a href="create_stock.php" class="headera"><button class="headerbutton" >Create</button></a>
-        <?php 
-            $div = '
-            <a href="login.php" class="headera"><button class="headerbutton" >Login</button></a>
-            <a href="register.php" class="headera"><button class="headerbutton" >Register</button></a>
-            ';
-            if ($isloggedin) {
-                $div = '
-                <a href="logout.php" class="headera"><button class="headerbutton" >Logout</button></a>
-                ';
-            }
-            echo $div;
-        ?>
-        <img src="Profile_Pics/default64.png" class="profilepic">
-    </header>
-    <body>
-        <div class="divider">
-            Latest
-        </div>
-        <div id="latest" class="latest">
-            <?php
+    <?php include_once("header.php"); ?>
+        <div class="content">
+            <div class="divider">
+                Latest
+            </div>
+            <div id="latest" class="latest">
+                <?php
                 foreach ($stockdivs as $stockdiv) {
                     echo $stockdiv;
                 }  
-            ?>
+                ?>
             
         </div>
         <div class="divider">
             Browse
         </div>
         <div class="browse">
-
+            <?php
+                foreach ($browsedivs as $browsediv) {
+                    echo $browsediv;
+                }  
+                ?>
         </div>
+        
+        <?php include_once("footer.php"); ?>
+    </div>
     </body>
-    <footer>
-
-    </footer>
-</body>
 
 </html>

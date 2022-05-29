@@ -74,34 +74,19 @@ if (isset($_SESSION['user'])) {
     <link rel="stylesheet" href="./Style.css">
 </head>
 <body>
-<header>
-        <a href="index.php" class="logo"><image src="images/logo.png" alt="logo" class="logo" /></a>
-        <div class="searchdiv">
-            <form>
-                <input class="searchbar" type="text" id="search" name="search" placeholder="Search">
-                <button class="searchbutton" type="submit" name="search_button">Search</button>
+    <?php include_once("header.php"); ?>
+    <div class="content">
+    <div class="login">
+            <form action="register.php" method="post" class="loginform">
+                <div class="handlediv">
+                    @<input type="text" id="handle" name="handle" placeholder="handle" class="loginhandle">
+                </div>
+                <input type="text" id="email" name="email" placeholder="email" class="loginemail">
+                <input type="password" id="password" name="password" placeholder="password" class="loginpassword">
+                <button type="submit" name="Register" class="loginbutton">Register</button>
             </form>
         </div>
-        <a href="create_stock.php" class="headera"><button class="headerbutton" >Create</button></a>
-        <?php 
-            $div = '
-            <a href="login.php" class="headera"><button class="headerbutton" >Login</button></a>
-            <a href="register.php" class="headera"><button class="headerbutton" >Register</button></a>
-            ';
-            if ($isloggedin) {
-                $div = '
-                <a href="logout.php" class="headera"><button class="headerbutton" >Logout</button></a>
-                ';
-            }
-            echo $div;
-        ?>
-        <img src="Profile_Pics/default64.png" class="profilepic">
-    </header>
-    <form action="register.php" method="post">
-        @<input type="text" id="handle" name="handle" placeholder="handle">
-        <input type="text" id="email" name="email" placeholder="email">
-        <input type="password" id="password" name="password" placeholder="password">
-        <button type="submit" name="Register">Register</button>
-    </form>
+    </div>
+    <?php include_once("footer.php"); ?>
 </body>
 </html>
