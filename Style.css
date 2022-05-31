@@ -607,6 +607,7 @@ footer {
     color: #fff;
     flex-wrap: wrap;
     margin: 2%;
+    overflow-x: hidden;
 }
 
 .displaytag {
@@ -616,6 +617,9 @@ footer {
     flex-direction: row;
     flex: 1 0 30%;
     margin: 2%;
+    overflow-x: visible;
+    min-width: 70px;
+    width: 100%;
 }
 
 .displaytag img {
