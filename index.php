@@ -1,7 +1,7 @@
 <?php
 session_start();
 ini_set("display_errors", "on");
-$conn = new mysqli("172.27.0.3", "ProjetWeb", "scam.com", "ProjetWeb");
+$conn = new mysqli("localhost", "ProjetWeb", "scam.com", "ProjetWeb");
 if(! $conn ) {
     die('Could not connect to db');
 }
