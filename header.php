@@ -89,12 +89,12 @@
         <a href="create_stock.php" class="headera"><button class="headerbutton" >Create</button></a>
         <?php 
             $logindiv = '
-            <a href="login.php" class="headera"><button class="headerbutton" >Login</button></a>
+            <a href="login.php" class="headera" style="border-right: 0px; border-left: 0px"><button class="headerbutton" >Login</button></a>
             <a href="register.php" class="headera"><button class="headerbutton" >Register</button></a>
             ';
             if ($isloggedin) {
                 $logindiv = '
-                <a href="cart.php" class="headera">
+                <a href="cart.php" class="headera" style="border-right: 0px; border-left: 0px">
                     <img class="headercart" src="images/cart-regular-48.png"/>
                 </a>
                 <a href="logout.php" class="headera"><button class="headerbutton" >Logout</button></a>

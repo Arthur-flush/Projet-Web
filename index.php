@@ -66,7 +66,7 @@ for ($i = 0; $i < count($stocks); $i++) {
 }
 
 // get 50 stocks from db
-$sql = "SELECT * FROM stock ORDER BY created_at DESC, id DESC LIMIT 50";
+$sql = "SELECT * FROM stock ORDER BY created_at DESC, id ASC LIMIT 50";
 $result = $conn->query($sql);
 if (!$result) {
     echo "Error: " . $sql . "<br>" . $conn->error;

@@ -11,12 +11,12 @@
     }
 
     if (isset($_POST["nameordesc"])) { // general search in both the item name and description
-        $search = $_POST["nameordesc"];
+        $search = htmlspecialchars($_POST["nameordesc"], ENT_QUOTES);
         $sql = "SELECT * FROM stock WHERE name LIKE '%$search%' OR description LIKE '%$search%' ORDER BY created_at DESC, id DESC LIMIT 50";
     }
     else { // specific search in all fields
-        $namecontains = $_POST["namecontains"];
-        $descriptioncontains = $_POST["descriptioncontains"];
+        $namecontains = htmlspecialchars($_POST["namecontains"], ENT_QUOTES);
+        $descriptioncontains = htmlspecialchars($_POST["descriptioncontains"], ENT_QUOTES);
         $pricemin = $_POST["pricemin"];
         $pricemax = $_POST["pricemax"];
         if (isset($_POST['tag'])) {
@@ -29,7 +29,7 @@
         else {
             $tagcontains = "";
         }
-        $ownername = $_POST["owner"];
+        $ownername = htmlspecialchars($_POST["owner"], ENT_QUOTES);
         $createdafter = $_POST["createdafter"];
         $createdbefore = $_POST["createdbefore"];
         $ratingmin = $_POST["ratingmin"];
