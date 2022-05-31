@@ -1,7 +1,7 @@
 <?php
 session_start();
 ini_set("display_errors", "on");
-$conn = new mysqli("127.0.0.1", "ProjetWeb", "scam.com", "ProjetWeb");
+$conn = new mysqli("127.0.0.1", "ProjetWeb", "Password", "ProjetWeb");
 if(! $conn ) {
     die('Could not connect to db');
 }
@@ -118,4 +118,6 @@ $pdf->Cell(20, 20, "Description: ", 0, 1);
 $pdf->SetFont('Arial', '', 14);
 $pdf->MultiCell(0, 7, iconv('UTF-8', "windows-1252", $description), 0, 1);
 
-$pdf->Output();
+$pdf->Output("I", "$name.pdf", true);
+
+unlink("tmp/" . $imagename);

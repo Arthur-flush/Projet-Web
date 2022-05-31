@@ -105,7 +105,7 @@
         <?php 
         if ($isloggedin) {
             // get image of user from db
-            $conn = new mysqli("127.0.0.1", "ProjetWeb", "scam.com", "ProjetWeb");
+            $conn = new mysqli("127.0.0.1", "ProjetWeb", "Password", "ProjetWeb");
             if(! $conn ) {
                 die('Could not connect to db');
             }

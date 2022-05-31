@@ -1,102 +1,102 @@
 <?php
-session_start();
-ini_set("display_errors", "on");
+    session_start();
+    ini_set("display_errors", "on");
     // check if user is logged in
     if (!isset($_SESSION['user'])) {
         echo "You are not logged in";
         header('Location: login.php');
     }
 
-// save the file
-$save_dir = "./stocks";
-$filename = uniqid(rand(), true) . ".png";
-$save_file = "$save_dir/$filename";
-$uploadOk = 1;
-// Check if image file is a actual image or fake image
-if (isset($_POST["Create"])) {
-    $check = getimagesize($_FILES["stock_IMAGE"]["tmp_name"]);
-    if ($check !== false) {
-        //echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
-
-    // Check if file already exists
-    // shouldnt happen though
-    if (file_exists($save_file)) {
-        echo "Sorry, file already exists.";
-        $uploadOk = 0;
-    }
-
-    // Check file size
-    if ($_FILES["stock_IMAGE"]["size"] > 50000) {
-        echo "Sorry, your file is too large.";
-        $uploadOk = 0;
-    }
-
-
-
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-    }
-    else {
-        if (move_uploaded_file($_FILES["stock_IMAGE"]["tmp_name"], $save_file)) {
+    // save the file
+    $save_dir = "./stocks";
+    $filename = uniqid(rand(), true) . ".png";
+    $save_file = "$save_dir/$filename";
+    $uploadOk = 1;
+    // Check if image file is a actual image or fake image
+    if (isset($_POST["Create"])) {
+        $check = getimagesize($_FILES["stock_IMAGE"]["tmp_name"]);
+        if ($check !== false) {
+            //echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+
+        // Check if file already exists
+        // shouldnt happen though
+        if (file_exists($save_file)) {
+            echo "Sorry, file already exists.";
+            $uploadOk = 0;
+        }
+
+        // Check file size
+        if ($_FILES["stock_IMAGE"]["size"] > 50000) {
+            echo "Sorry, your file is too large.";
+            $uploadOk = 0;
+        }
+
+
+
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+        }
+        else {
+            if (move_uploaded_file($_FILES["stock_IMAGE"]["tmp_name"], $save_file)) {
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        }
+
+        $created_record = false;
+        // save the stock in the db
+
+        $conn = new mysqli("127.0.0.1", "ProjetWeb", "Password", "ProjetWeb");
+        if(! $conn ) {
+            echo "hahahah db goes brrrrr";
+            die('Could not connect to db');
+        }
+        // get user id from db
+        $id = $_SESSION['user'];
+        $name = $_POST['stock_NAME'];
+        // check if name is valid
+        if (!preg_match("/^[a-zA-Z0-9._-]+$/", $name)) {
+            echo "Error: The stock name must be alphanumeric";
+            die();
+        }
+        $description = $_POST['stock_DESCRIPTION'];
+        $price = $_POST['stock_PRICE'];
+        // check if price is a real number
+        if (!is_numeric($price)) {
+            echo "Error: The stock price must be a number";
+            die();
+        }
+
+        $tags = $_POST['tag'];
+        // make tags into a string
+        $tags = implode(",", $tags);
+
+
+        $sql = "INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('$name', '$description', '$filename', '$price', '$id', '$tags')";
+        if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+            $created_record = true;
+            header('Location: index.php');
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+        
+
+        if (!$created_record) {
+            // delete file
+            unlink($save_file);
         }
     }
 
-    $created_record = false;
-    // save the stock in the db
-
-    $conn = new mysqli("127.0.0.1", "ProjetWeb", "scam.com", "ProjetWeb");
-    if(! $conn ) {
-        echo "hahahah db goes brrrrr";
-        die('Could not connect to db');
+    $isloggedin = false;
+    if (isset($_SESSION['user'])) {
+        $isloggedin = true;
     }
-    // get user id from db
-    $id = $_SESSION['user'];
-    $name = $_POST['stock_NAME'];
-    // check if name is valid
-    if (!preg_match("/^[a-zA-Z0-9._-]+$/", $name)) {
-        echo "Error: The stock name must be alphanumeric";
-        die();
-    }
-    $description = $_POST['stock_DESCRIPTION'];
-    $price = $_POST['stock_PRICE'];
-    // check if price is a real number
-    if (!is_numeric($price)) {
-        echo "Error: The stock price must be a number";
-        die();
-    }
-
-    $tags = $_POST['tag'];
-    // make tags into a string
-    $tags = implode(",", $tags);
-
-
-    $sql = "INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('$name', '$description', '$filename', '$price', '$id', '$tags')";
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-        $created_record = true;
-        header('Location: index.php');
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-    
-
-    if (!$created_record) {
-        // delete file
-        unlink($save_file);
-    }
-}
-
-$isloggedin = false;
-if (isset($_SESSION['user'])) {
-    $isloggedin = true;
-}
 ?>
 
 <!DOCTYPE html>
