@@ -2,7 +2,7 @@
 session_start();
 ini_set("display_errors", "on");
 
-$conn = new mysqli("127.0.0.1", "ProjetWeb", "scam.com", "ProjetWeb");
+$conn = new mysqli("127.0.0.1", "ProjetWeb", "Password", "ProjetWeb");
 if(! $conn ) {
     die('Could not connect to db');
     echo "hahahah db goes brrrrr";
@@ -65,7 +65,14 @@ if (isset($_SESSION['user'])) {
     } 
 
     $div = "
-        <div class='cart'>
+    <div class='cart-title' id='carttitle'>Your cart: </div>
+    <div class='cart' id='cart'>
+    <script>
+        // set the width of carttitle to the width of the cart
+        var carttitle = document.getElementById('carttitle');
+        var cart = document.getElementById('cart');
+        carttitle.style.width = cart.style.width;
+    </script>
     ";
 
     foreach($cartelems as $cartelem) {
@@ -108,7 +115,7 @@ if (isset($_SESSION['user'])) {
     $div .= "
         <div class='cart-checkout'>
             <div class='cart-total'>
-                Total: $" . $totalprice . "
+                Total: $$totalprice
             </div>
             <div class='cart-checkout-div'>
                 <a href='checkout.php' >

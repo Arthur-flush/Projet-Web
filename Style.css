@@ -141,6 +141,9 @@ footer {
     z-index: 1000;
     color: #fff;
     cursor: pointer;
+    border: 1px solid #bbb;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
     
 }
 
@@ -217,12 +220,14 @@ footer {
     color: #fff;
     background-color: #111;
     cursor: pointer;
+    border: none;
 }
 
 .headera {
     width: 8%;
     height: 53px;
     border: 1px solid #aaa;
+    border-top: none;
     font-size: 15px;
     color: #fff;
     background-color: #111;
@@ -251,9 +256,16 @@ footer {
 .profilepic {
     border-radius: 50%;
     margin-left: 2%;
-    margin-right: 1%;
-    margin-top: 2px;
-    margin-bottom: 5px;
+    margin-right: 2%;
+    margin-top: 3px;
+    margin-bottom: 2px;
+}
+
+.profilepic img {
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 48px;
+    height: 48px;
 }
 
 .latest {
@@ -266,6 +278,7 @@ footer {
     overflow-y: hidden;
     overflow-x: auto;
     scrollbar-width: thin;
+    padding-left: 5%;
 }
 
 .divider {
@@ -594,6 +607,7 @@ footer {
     color: #fff;
     flex-wrap: wrap;
     margin: 2%;
+    overflow-x: hidden;
 }
 
 .displaytag {
@@ -603,6 +617,9 @@ footer {
     flex-direction: row;
     flex: 1 0 30%;
     margin: 2%;
+    overflow-x: visible;
+    min-width: 70px;
+    width: 100%;
 }
 
 .displaytag img {
@@ -667,9 +684,21 @@ footer {
     align-items: center;
     flex-direction: row;
     overflow: hidden;
-    margin: 5%;
+    margin: 0% 5% 5% 5%;
     flex-wrap: wrap;
     overflow-y: visible;
+}
+
+.cart-title {
+    height: auto;
+    background-color: #111;
+    overflow: hidden;
+    margin: 5% 5% 0% 5%;
+    padding-top: 1%;
+    padding-left: 3%;
+    flex-wrap: wrap;
+    overflow-y: visible;
+    font-size: 50px;
 }
 
 .cart-element {
@@ -992,4 +1021,265 @@ footer {
     flex: 0 1 20%;
     margin-top: 2%;
     margin-bottom: 2%;
+}
+
+.profile {
+    width: 90%;
+    height: auto;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    overflow-x: hidden;
+    overflow-y: visible;
+    flex-wrap: wrap;
+    margin-bottom: 10%;
+    padding: 5% 5% 0% 0%;
+    margin: 2.5% 2.5% 7% 2.5%;
+}
+
+.profiledata {
+    width: 100%;
+    height: auto;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 2% 2% 0% 2%;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    padding: 2% 2% 0% 2%;
+}
+
+.profileimage {
+    width: 100%;
+    height: auto;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    padding: 2%;
+}
+
+.profileimgupload {
+    width: auto;
+    height: auto;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    padding: 0% 2% 2% 2%;
+}
+
+.profileinfo {
+    width: 90%;
+    height: auto;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 2% 2% 2% 0%;
+    text-align: center;
+    color: #fff;
+    padding: 2%;
+    
+}
+
+.profiletitle {
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    align-self: flex-start;
+    text-align: start;
+    margin-left: 20%;
+}
+
+.profileusername {
+    width: 100%;
+    height: auto;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 2%;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    padding: 2%;
+}
+
+.profileemail {
+    width: 100%;
+    height: auto;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 2%;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    padding: 2%;
+}
+
+.profiletextarea textarea {
+    width: 95%;
+    height: auto;
+    background-color: #111;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    color: #fff;
+    margin: 2%;
+    font-size: 20px;
+}
+
+
+
+.profilebio {
+    width: 80%;
+    height: auto;
+    background-color: #111;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    color: #fff;
+    margin: 2%;
+    min-width: 80%;
+    min-height: 200px;
+    border: 1px solid #fff;
+    border-radius: 7px;
+    text-align: start;
+    padding: 2%;
+    font-size: 20px;
+}
+
+.profilebuttons {
+    width: 90%;
+    height: auto;
+    background-color: #111;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+    margin: 2% 2% 2% 0%;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    padding: 2%;
+
+}
+
+.profilebuttonsave {
+    width: 200px;
+    height: auto;
+    background-color: rgb(90, 255, 90);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 2%;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    padding: 2%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.profilebuttoncancel {
+    width: 200px;
+    height: auto;
+    background-color: rgb(255, 90, 90);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 2%;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    padding: 2%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.deleteuser {
+    width: 90%;
+    height: auto;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 2% 2% 2% 0%;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    padding: 2%;
+}
+
+.deleteuserbuttons {
+    width: 90%;
+    height: auto;
+    background-color: #111;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+    margin: 2% 2% 2% 0%;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    padding: 2%;
+}
+
+.deleteuserbutton {
+    width: 210px;
+    height: 70px;
+    background-color: rgb(255, 60, 60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 2%;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    padding: 3%;
+    border-radius: 10px;
+    cursor: pointer;
 }

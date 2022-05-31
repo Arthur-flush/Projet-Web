@@ -45,3 +45,5 @@ User Page
 User Page admin options
     [ ] style
     [ ] code
+
+test search since i added filters
