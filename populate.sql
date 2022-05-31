@@ -9,3 +9,15 @@ INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('moment
 INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('zing & ming', 'La tete de classe en une seul photo incroyable non? ', 'exam.png', 8,   2, "shawn,neutral expression,chad,group,serious");
 INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('English presentation', 'Encore une photo de groupe ou on peut voir killian et luca presenté un jeu video a la prof d''anglais en guise de PROJET FINAL ps:je trouve cela plus que studieux, moment incroyable dans l''histoire de l''UPVD!','Elden.png', 18,   2, "luca,killian,group,flex");
 INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('eliot', 'La raison pour laquelle tout les etudiants de cette classe on choisit la Licence info !', 'main_goal.png',5,   2, "flex");
+
+INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('shawn de haut', 'Cette photo vaut vraiment son prix car le photographe a vraiment pris d''enorme risque on se rapprochant autant de shawn.  :() ', 'shyshawn.png', 13,   3, "shawn,neutral expression,serious");
+
+INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('????', 'Un des cours d''architecture des ordinateurs cependant les expliquation ne viennent pas avec l''image car personne n''a encore compris ', 'incompréhensible.png', 2,   3, "serious");
+
+INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('L''accord Royal', 'On y voit clairement chad et son chien ce mettre d''acord sur le budget croquette de REX ', 'chienchad.png', 4,   3, "dog,chad,group,serious,nature");
+INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('catsle nine DELUXE', 'Une autre version de notre image star "Catsle Nine "ou cette fois arthur presente un sourire a la place d''une expression facial neutre ', 'susarthur.png', 29,   2, "bleu,selfie");
+INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('Pause de 45 min tout les mardi', 'Il est tres important pour des eleves aussi studieux que nous de prendre de bonne pause afin de repartir de meilleur! ', 'pause.png', 6,   3, "shawn,neutral expression,killian,group,classe,samy");
+INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('Le chat de la rue de samy', 'Ici on denonce simplement samy qui a trouver un chat dans la rue il ya 1 ans et qu''il sequestre chez lui depuis.Donc si vous cherchez votre chat c''est peu etre samy qui l''as volé! ', 'chatsamy.png', 8,   3, "samy,neutral expression,serious");
+INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('Exam du premier semestre ', 'Un jour un grand homme (SRIRAMAN) a dit l''union fait la force comme l''onion fait la soupe.Donc depuis on travail ensemble', 'charbon.png', 8,   3, "bleu,class,group,serious");
+
+INSERT INTO stock (name, description, image, price, owner, tags) VALUES ('Robot Mobil', 'Ce jour mon groupe (chad) a été victime d''une grande injustice notre robot etait super precis et aller super vite mais on a juste eu 15?! ', 'robot.png', 8,   3, "serious,group");
