@@ -15,8 +15,8 @@ Basket page / checkout
     [x] code
 
 Search bar / search page
-    [ ] style
-    [ ] code
+    [x] style
+    [x] code
 
 "Newest items"
     [x] style
