@@ -167,93 +167,93 @@
 
             <div class="tags">
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="person" value="person"/>
-                    <label for="person">person</label>
+                    <input type="checkbox" name="tag[]" id="advperson" value="person"/>
+                    <label for="advperson">person</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="bleu" value="bleu"/>
-                    <label for="bleu">bleu</label>
+                    <input type="checkbox" name="tag[]" id="advbleu" value="bleu"/>
+                    <label for="advbleu">bleu</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="cosplay" value="cosplay"/>
-                    <label for="cosplay">cosplay</label>
+                    <input type="checkbox" name="tag[]" id="advcosplay" value="cosplay"/>
+                    <label for="advcosplay">cosplay</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="neutral expression" value="neutral expression"/>
-                    <label for="neutral expression">neutral expression</label>
+                    <input type="checkbox" name="tag[]" id="advneutral expression" value="neutral expression"/>
+                    <label for="advneutral expression">neutral expression</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="dog" value="dog"/>
-                    <label for="dog">dog</label>
+                    <input type="checkbox" name="tag[]" id="advdog" value="dog"/>
+                    <label for="advdog">dog</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="killian" value="killian"/>
-                    <label for="killian">killian</label>
+                    <input type="checkbox" name="tag[]" id="advkillian" value="killian"/>
+                    <label for="advkillian">killian</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="group" value="group"/>
-                    <label for="group">group</label>
+                    <input type="checkbox" name="tag[]" id="advgroup" value="group"/>
+                    <label for="advgroup">group</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="arthur" value="arthur"/>
-                    <label for="arthur">arthur</label>
+                    <input type="checkbox" name="tag[]" id="advarthur" value="arthur"/>
+                    <label for="advarthur">arthur</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="chad" value="chad"/>
-                    <label for="chad">chad</label>
+                    <input type="checkbox" name="tag[]" id="advchad" value="chad"/>
+                    <label for="advchad">chad</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="luca" value="luca"/>
-                    <label for="luca">luca</label>
+                    <input type="checkbox" name="tag[]" id="advluca" value="luca"/>
+                    <label for="advluca">luca</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="classe" value="classe"/>
-                    <label for="classe">classe</label>
+                    <input type="checkbox" name="tag[]" id="advclasse" value="classe"/>
+                    <label for="advclasse">classe</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="nature" value="nature"/>
-                    <label for="nature">nature</label>
+                    <input type="checkbox" name="tag[]" id="advnature" value="nature"/>
+                    <label for="advnature">nature</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="samy" value="samy"/>
-                    <label for="samy">samy</label>
+                    <input type="checkbox" name="tag[]" id="advsamy" value="samy"/>
+                    <label for="advsamy">samy</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="flex" value="flex"/>
-                    <label for="flex">flex</label>
+                    <input type="checkbox" name="tag[]" id="advflex" value="flex"/>
+                    <label for="advflex">flex</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="shawn" value="shawn"/>
-                    <label for="shawn">shawn</label>
+                    <input type="checkbox" name="tag[]" id="advshawn" value="shawn"/>
+                    <label for="advshawn">shawn</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="selfie" value="selfie"/>
-                    <label for="selfie">selfie</label>
+                    <input type="checkbox" name="tag[]" id="advselfie" value="selfie"/>
+                    <label for="advselfie">selfie</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="suit" value="suit"/>
-                    <label for="suit">suit</label>
+                    <input type="checkbox" name="tag[]" id="advsuit" value="suit"/>
+                    <label for="advsuit">suit</label>
                     
                 </div>
                 <div class="tag">
-                    <input type="checkbox" name="tag[]" id="serious" value="serious"/>
-                    <label for="serious">serious</label>
+                    <input type="checkbox" name="tag[]" id="advserious" value="serious"/>
+                    <label for="advserious">serious</label>
                     
                 </div>
             </div>

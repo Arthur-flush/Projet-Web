@@ -16,7 +16,7 @@ $sql = "SELECT * FROM stock WHERE id = '" . $_GET["id"] . "'";
 $result = $conn->query($sql);
 
 $div = '
-<div class="stockpage">
+    <div class="stockpage">
         <div class="stockpageimginfo">
             <div class="downloadpdf">
                 <button class="pdfbutton" id="pdfbutton" onclick="location.href = \'generate_pdf.php?id=placeholderstockid\'">
